@@ -1,0 +1,40 @@
+Name     deco7seg ;
+PartNo   00 ;
+Date     27/05/2020 ;
+Revision 01 ;
+Designer Engineer ;
+Company  jlrey ;
+Assembly None ;
+Location  ;
+Device   g22v10 ;
+
+/* *************** INPUT PINS *********************/
+PIN    1 = e3                        ; /*                                 */ 
+PIN    2 = e2                        ; /*                                 */ 
+PIN    3 = e1                        ; /*                                 */ 
+PIN    4 = e0                        ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN    14 = !g                        ; /*                                 */ 
+PIN    15 = !f                        ; /*                                 */ 
+PIN    16 = !e                        ; /*                                 */ 
+PIN    17 = !d                        ; /*                                 */ 
+PIN    18 = !c                        ; /*                                 */ 
+PIN    19 = !b                        ; /*                                 */ 
+PIN    20 = !a                        ; /*                                 */ 
+
+field entrada=[e3,e2,e1,e0];
+field salida=[g,f,e,d,c,b,a];
+
+TABLE entrada => salida {
+    'b'0000 => 'b'0111111;
+    'b'0001 => 'b'0000110;
+    'b'0010 => 'b'1011011;
+    'b'0011 => 'b'1001111;
+    'b'0100 => 'b'1100110;
+    'b'0101 => 'b'1101101;
+    'b'0110 => 'b'1111101;
+    'b'0111 => 'b'0000111;
+    'b'1000 => 'b'1111111;
+    'b'1001 => 'b'1100111;}
+

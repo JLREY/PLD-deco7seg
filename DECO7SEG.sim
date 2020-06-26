@@ -1,0 +1,81 @@
+%SIGNAL
+PIN  20 = !a 
+PIN  19 = !b 
+PIN  18 = !c 
+PIN  17 = !d 
+PIN  16 = !e 
+PIN   4 =  e0 
+PIN   3 =  e1 
+PIN   2 =  e2 
+PIN   1 =  e3 
+PIN  15 = !f 
+PIN  14 = !g 
+%END
+
+%FIELD
+FIELD entrada = e3,e2,e1,e0
+FIELD salida = g,f,e,d,c,b,a
+%END
+
+%EQUATION
+a =>
+    e1 & !e3
+  # !e0 & !e1 & !e2
+  # !e1 & !e2 & e3
+  # e0 & e2 & !e3
+
+b =>
+    !e1 & !e2
+  # !e2 & !e3
+  # e0 & e1 & !e3
+  # !e0 & !e1 & !e3
+
+c =>
+    !e1 & !e2
+  # e0 & !e3
+  # e2 & !e3
+
+d =>
+    !e0 & !e1 & !e2
+  # !e0 & e1 & !e3
+  # e1 & !e2 & !e3
+  # e0 & !e1 & e2 & !e3
+
+e =>
+    !e0 & !e1 & !e2
+  # !e0 & e1 & !e3
+
+f =>
+    !e0 & !e1 & !e2
+  # !e1 & !e2 & e3
+  # !e0 & e2 & !e3
+  # !e1 & e2 & !e3
+
+g =>
+    !e1 & !e2 & e3
+  # !e0 & e1 & !e3
+  # !e1 & e2 & !e3
+  # e1 & !e2 & !e3
+
+a.oe  =>
+    1 
+
+b.oe  =>
+    1 
+
+c.oe  =>
+    1 
+
+d.oe  =>
+    1 
+
+e.oe  =>
+    1 
+
+f.oe  =>
+    1 
+
+g.oe  =>
+    1 
+
+%END
